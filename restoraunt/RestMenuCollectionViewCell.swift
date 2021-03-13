@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoryCollectionViewCell: UICollectionViewCell {
+class RestMenuCollectionViewCell: UICollectionViewCell {
     
     static var reusedId = "CategoryCell"
     
@@ -28,8 +28,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-           // self.categoryImageView.pushViewController(CategoryMenuViewController, animated: true)
-            // добавить переход 
+            // добавить переход
+            print("fffffffff")
         }
     }
     

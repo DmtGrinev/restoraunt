@@ -34,9 +34,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="b8A-V0-Eqv">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="MBs-8f-tXi">
+                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="MBs-8f-tXi">
                             <connections>
                                 <action selector="tapMenu:" destination="BYZ-38-t0r" id="OM5-uh-HmW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="KSp-aY-3G7">
+                            <connections>
+                                <segue destination="epX-yE-8Rb" kind="show" id="r8m-ug-rv0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -47,6 +52,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2533.3333333333335" y="69.642857142857139"/>
+        </scene>
+        <!--Category Menu View Controller-->
+        <scene sceneID="7Ko-VR-mJo">
+            <objects>
+                <viewController storyboardIdentifier="Story" useStoryboardIdentifierAsRestorationIdentifier="YES" id="epX-yE-8Rb" customClass="CategoryMenuViewController" customModule="restoraunt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QFe-4s-jl7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ch8-da-OIl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HgY-mh-PTk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3oQ-rs-m1H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3536" y="62"/>
         </scene>
         <!--Side Menu Navigation Controller-->
         <scene sceneID="48B-cu-CM2">

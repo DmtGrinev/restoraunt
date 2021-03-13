@@ -13,6 +13,7 @@ class RestMenuViewController: UIViewController {
     
     var collectionView: UICollectionView!
     var menu: SideMenuNavigationController?
+    let category = CategoryModel.fetchCategory()
     
     //    private lazy var leftBarButtonItem: UIBarButtonItem = {
     //        return UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(barButtonItemTapped))
@@ -37,18 +38,16 @@ class RestMenuViewController: UIViewController {
 
 extension RestMenuViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // print(photosObject.count)
-        return 15 //photosObject.count
+        return category.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.reusedId, for: indexPath) as! CategoryCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RestMenuCollectionViewCell.reusedId, for: indexPath) as! RestMenuCollectionViewCell
         cell.backgroundColor = .systemYellow
-        
-        // TODO: add text from photos description & photo ([indexPath.item])
-        cell.categoryImageView.image = UIImage(named: "image")
-        cell.categoryLabel.text = " Дима молодец :)"
+        cell.categoryImageView.image = UIImage(named: category[indexPath.item].categoryImage)
+        cell.categoryLabel.text = category[indexPath.item].categoryTitle  
         cell.layer.cornerRadius = 10
         cell.layer.masksToBounds = true
+        cell.categoryImageView.clipsToBounds = true
         return cell
     }
 }
@@ -73,8 +72,8 @@ private extension RestMenuViewController {
         self.collectionView.backgroundColor = .systemGray2
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        self.collectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.reusedId)
-        self.collectionView.contentInset = UIEdgeInsets(top: 35, left: 16, bottom: 25, right: 16)
+        self.collectionView.register(RestMenuCollectionViewCell.self, forCellWithReuseIdentifier: RestMenuCollectionViewCell.reusedId)
+        self.collectionView.contentInset = UIEdgeInsets(top: 25, left: 16, bottom: 25, right: 16)
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.estimatedItemSize = .zero
     }

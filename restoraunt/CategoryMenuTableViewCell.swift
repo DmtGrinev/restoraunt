@@ -10,11 +10,25 @@ import UIKit
 class CategoryMenuTableViewCell: UITableViewCell {
     
     static var reusedId = "CategoryMenuCell"
-
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupDishImageView()
+        setupTitleDishLabel()
+        setupDescriptionDishLabel()
+        setupPriceDishLabel()
+        setupPriceDishLabel()
+        setupWeightDishLabel()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     var dishImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .systemGreen
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -28,21 +42,21 @@ class CategoryMenuTableViewCell: UITableViewCell {
     
     var descriptionDishLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .systemPink
+        label.backgroundColor = .systemYellow
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     var priceDishLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .systemPink
+        label.backgroundColor = .systemBlue
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     var weightDishLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .systemPink
+        label.backgroundColor = .systemOrange
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -57,43 +71,42 @@ class CategoryMenuTableViewCell: UITableViewCell {
     }
     
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setupDishImageView()
-        setupTitleDishLabel()
-        setupDescriptionDishLabel()
-        setupPriceDishLabel()
-        setupPriceDishLabel()
-        setupWeightDishLabel()
-    }
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
+    
+//    override func layoutSubviews() {
+//        dishImageView.frame = CGRect(x: 70, y: 70, width: 70, height: 70)
+//    }
+    
 
     func setupDishImageView() {
         addSubview(dishImageView)
-        dishImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        dishImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: contentView.frame.width * 0.7).isActive = true
         dishImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         dishImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        dishImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -30).isActive = true
+        dishImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
     func setupTitleDishLabel() {
         addSubview(titleDishLabel)
         titleDishLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        titleDishLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-      //  titleDishLabel.topAnchor.constraint(equalTo: self.categoryImageView.bottomAnchor).isActive = true
-        titleDishLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        titleDishLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: +150).isActive = true
+        titleDishLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        titleDishLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: +350).isActive = true
     }
     
     func setupDescriptionDishLabel() {
         addSubview(descriptionDishLabel)
         descriptionDishLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        descriptionDishLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-    //    descriptionDishLabel.topAnchor.constraint(equalTo: self.categoryImageView.bottomAnchor).isActive = true
+        descriptionDishLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: +150).isActive = true
+        descriptionDishLabel.topAnchor.constraint(equalTo: self.titleDishLabel.bottomAnchor).isActive = true
         descriptionDishLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     

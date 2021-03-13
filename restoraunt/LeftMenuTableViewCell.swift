@@ -11,9 +11,26 @@ class LeftMenuTableViewCell: UITableViewCell {
     
     static var reusedId = "LeftMenuCell"
     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupTitleLeftMenuLabel()
+        setupLeftMenuImageView()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    var leftMenuCellImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.backgroundColor = .systemBlue
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     var titleLeftMenuLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .systemPink
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -21,11 +38,11 @@ class LeftMenuTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         titleLeftMenuLabel.text = nil
+        leftMenuCellImageView.image = nil
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupTitleLeftMenuLabel()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -33,11 +50,23 @@ class LeftMenuTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+//        override func layoutSubviews() {
+//            leftMenuCellImageView.frame = CGRect(x: 20, y: 20, width: 20, height: 20)
+//        }
+    
     func setupTitleLeftMenuLabel() {
         addSubview(titleLeftMenuLabel)
         titleLeftMenuLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        titleLeftMenuLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        titleLeftMenuLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: +50).isActive = true
         titleLeftMenuLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         titleLeftMenuLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+    }
+    func setupLeftMenuImageView() {
+        addSubview(leftMenuCellImageView)
+        leftMenuCellImageView.trailingAnchor.constraint(equalTo: self.titleLeftMenuLabel.leadingAnchor).isActive = true
+        leftMenuCellImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        leftMenuCellImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        leftMenuCellImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
 }
