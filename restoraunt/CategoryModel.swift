@@ -20,20 +20,11 @@ struct CategoryModel {
     ]
     
     static func fetchCategory() -> [CategoryModel] {
-        var dishes = [CategoryModel]()
-        for dish in restaurantNames {
-            dishes.append(CategoryModel(categoryImage: dish, categoryTitle: dish))
+        var categorys = [CategoryModel]()
+        for category in restaurantNames {
+            categorys.append(CategoryModel(categoryImage: category, categoryTitle: category))
         }
-        
-        return dishes
+        return categorys
     }
-    
-//    func fetchCategory() -> [CategoryModel] {
-//
-//        let item1 = CategoryModel(categoryImage: UIImage(named: "Балкан Гриль")) //, categoryTitle: "very teasty")
-//        let item2 = CategoryModel(categoryImage: UIImage(named: "Бочка")) //, categoryTitle: "very teasty")
-//        let item3 = CategoryModel(categoryImage: UIImage(named: "Вкусные истории")) //, categoryTitle: "very teasty")
-//        print(item1)
-//        return [item1, item2, item3]
-//    }
+
 }

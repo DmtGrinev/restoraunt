@@ -9,7 +9,7 @@ import UIKit
 
 class LeftMenuTableViewCell: UITableViewCell {
     
-    static var reusedId = "LeftMenuCell"
+    static let reusedId = "LeftMenuCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -51,19 +51,15 @@ class LeftMenuTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-//        override func layoutSubviews() {
-//            leftMenuCellImageView.frame = CGRect(x: 20, y: 20, width: 20, height: 20)
-//        }
-    
     func setupTitleLeftMenuLabel() {
-        addSubview(titleLeftMenuLabel)
+        contentView.addSubview(titleLeftMenuLabel)
         titleLeftMenuLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         titleLeftMenuLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: +50).isActive = true
         titleLeftMenuLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         titleLeftMenuLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     func setupLeftMenuImageView() {
-        addSubview(leftMenuCellImageView)
+        contentView.addSubview(leftMenuCellImageView)
         leftMenuCellImageView.trailingAnchor.constraint(equalTo: self.titleLeftMenuLabel.leadingAnchor).isActive = true
         leftMenuCellImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         leftMenuCellImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true

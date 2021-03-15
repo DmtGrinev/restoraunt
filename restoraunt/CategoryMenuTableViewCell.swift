@@ -9,7 +9,7 @@ import UIKit
 
 class CategoryMenuTableViewCell: UITableViewCell {
     
-    static var reusedId = "CategoryMenuCell"
+    static let reusedId = "CategoryMenuCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -27,47 +27,38 @@ class CategoryMenuTableViewCell: UITableViewCell {
     
     var dishImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .systemGreen
-        imageView.contentMode = .scaleAspectFit
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     var titleDishLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .systemPink
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     var descriptionDishLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .systemYellow
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    var priceDishLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .systemBlue
-        label.translatesAutoresizingMaskIntoConstraints = false
+      
         return label
     }()
     
     var weightDishLabel: UILabel = {
+          let label = UILabel()
+        
+          return label
+      }()
+    
+    var priceDishLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .systemOrange
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
-        dishImageView.image = nil
-        titleDishLabel.text = nil
-        descriptionDishLabel.text = nil
-        priceDishLabel.text = nil
-        weightDishLabel.text = nil
+//        dishImageView.image = nil
+//        titleDishLabel.text = nil
+//        descriptionDishLabel.text = nil
+//        priceDishLabel.text = nil
+//        weightDishLabel.text = nil
     }
     
     
@@ -81,49 +72,63 @@ class CategoryMenuTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-//    override func layoutSubviews() {
-//        dishImageView.frame = CGRect(x: 70, y: 70, width: 70, height: 70)
-//    }
+    override func layoutSubviews() {
+        dishImageView.frame = CGRect(x: 5,
+                                     y: 5,
+                                     width: 100,
+                                     height: contentView.frame.size.height - 10)
+        titleDishLabel.frame = CGRect(x: 10 + dishImageView.frame.size.width ,
+                                      y: 5,
+                                      width: contentView.frame.size.width - dishImageView.frame.size.width - 10,
+                                      height: contentView.frame.size.height / 5)
+        descriptionDishLabel.frame = CGRect(x: 10 + dishImageView.frame.size.width,
+                                      y: titleDishLabel.frame.size.height,
+                                      width: contentView.frame.size.width - dishImageView.frame.size.width - 10,
+                                      height: contentView.frame.size.height - (titleDishLabel.frame.size.height * 2))
+        weightDishLabel.frame = CGRect(x: 10 + dishImageView.frame.size.width,
+                                       y: titleDishLabel.frame.size.height + descriptionDishLabel.frame.size.height,
+                                      width: contentView.frame.size.width - dishImageView.frame.size.width - 10 - ((contentView.frame.size.width - dishImageView.frame.size.width) / 2),
+                                      height: contentView.frame.size.height - 5 - (titleDishLabel.frame.size.height + descriptionDishLabel.frame.size.height))
+        priceDishLabel.frame = CGRect(x: 10 + dishImageView.frame.size.width + weightDishLabel.frame.size.width,
+                                       y: titleDishLabel.frame.size.height + descriptionDishLabel.frame.size.height,
+                                      width: contentView.frame.size.width - dishImageView.frame.size.width - weightDishLabel.frame.size.width - 10,
+                                      height: contentView.frame.size.height - 5 - (titleDishLabel.frame.size.height + descriptionDishLabel.frame.size.height))
+    }
     
 
     func setupDishImageView() {
-        addSubview(dishImageView)
-        dishImageView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: contentView.frame.width * 0.7).isActive = true
-        dishImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        dishImageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        dishImageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        contentView.addSubview(dishImageView)
+        dishImageView.backgroundColor = .systemGreen
+        dishImageView.contentMode = .scaleAspectFit
+//        dishImageView.clipsToBounds = true
     }
     
     func setupTitleDishLabel() {
-        addSubview(titleDishLabel)
-        titleDishLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        titleDishLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: +150).isActive = true
-        titleDishLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        titleDishLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: +350).isActive = true
+        contentView.addSubview(titleDishLabel)
+        titleDishLabel.backgroundColor = .systemPink
+        titleDishLabel.font = .boldSystemFont(ofSize: 18)
+        titleDishLabel.textAlignment = .center
+        titleDishLabel.text = "Название"
     }
     
     func setupDescriptionDishLabel() {
-        addSubview(descriptionDishLabel)
-        descriptionDishLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        descriptionDishLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: +150).isActive = true
-        descriptionDishLabel.topAnchor.constraint(equalTo: self.titleDishLabel.bottomAnchor).isActive = true
-        descriptionDishLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-    }
-    
-    func setupPriceDishLabel() {
-        addSubview(priceDishLabel)
-        priceDishLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        priceDishLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-  //      priceDishLabel.topAnchor.constraint(equalTo: self.categoryImageView.bottomAnchor).isActive = true
-        priceDishLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        contentView.addSubview(descriptionDishLabel)
+        descriptionDishLabel.backgroundColor = .systemYellow
+        descriptionDishLabel.numberOfLines = 0
+        descriptionDishLabel.font = .systemFont(ofSize: 12)
+        descriptionDishLabel.text = "Здесь будет описание и состав блюд 12321413"
     }
     
     func setupWeightDishLabel() {
-        addSubview(weightDishLabel)
-        weightDishLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        weightDishLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-    //    weightDishLabel.topAnchor.constraint(equalTo: self.categoryImageView.bottomAnchor).isActive = true
-        weightDishLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        contentView.addSubview(weightDishLabel)
+        weightDishLabel.backgroundColor = .systemOrange
+        weightDishLabel.textAlignment = .center
+        weightDishLabel.text = "567гр."
     }
     
+    func setupPriceDishLabel() {
+        contentView.addSubview(priceDishLabel)
+        priceDishLabel.backgroundColor = .systemRed
+        priceDishLabel.text = "3456 руб."
+    }
 }

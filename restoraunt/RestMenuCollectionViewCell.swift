@@ -9,7 +9,7 @@ import UIKit
 
 class RestMenuCollectionViewCell: UICollectionViewCell {
     
-    static var reusedId = "CategoryCell"
+    static let reusedId = "CategoryCell"
     
     var categoryImageView: UIImageView = {
         let imageView = UIImageView()

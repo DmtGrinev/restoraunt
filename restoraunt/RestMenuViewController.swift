@@ -14,11 +14,6 @@ class RestMenuViewController: UIViewController {
     var collectionView: UICollectionView!
     var menu: SideMenuNavigationController?
     let category = CategoryModel.fetchCategory()
-    
-    //    private lazy var leftBarButtonItem: UIBarButtonItem = {
-    //        return UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(barButtonItemTapped))
-    //    }()
-    
     private let itemsPerRow: CGFloat = 2
     
     override func viewDidLoad() {

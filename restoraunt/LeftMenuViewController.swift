@@ -9,7 +9,7 @@ import UIKit
 
 class LeftMenuViewController: UIViewController{
     
-    let cellSpacingHeight: CGFloat = 5
+    var items = ["Бронь стола", "Акции и предложения", "Оставить отзыв", "Как нас найти"]
     
     var tableView: UITableView = {
         let tableView = UITableView()
@@ -17,7 +17,6 @@ class LeftMenuViewController: UIViewController{
         return tableView
     }()
 
-    
     var leftMenuImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.backgroundColor = .systemGreen
@@ -27,24 +26,16 @@ class LeftMenuViewController: UIViewController{
         return imageView
     }()
     
-    var items = ["Бронь стола", "Акции и предложения", "Оставить отзыв", "Как нас найти"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.updateLayout(with: self.view.frame.size)
         setupLeftMenuImageView()
         setupTableView()
     }
     
-//    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-//        super.viewWillTransition(to: size, with: coordinator)
-//        coordinator.animate(alongsideTransition: { (context) in
-//            self.updateLayout(with: size)
-//        }, completion: nil)
-//    }
-//
-    
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
+    }
     /*
      // MARK: - Navigation
      
@@ -54,24 +45,19 @@ class LeftMenuViewController: UIViewController{
      // Pass the selected object to the new view controller.
      }
      */
-
-    
+   
 }
 
-//extension CategoryMenuViewController {}
-//
 private extension LeftMenuViewController {
-    private func updateLayout(with size: CGSize) {
-        self.tableView.frame = CGRect.init(origin: .zero, size: size)
-    }
     func setupTableView() {
         self.view.addSubview(tableView)
         self.tableView.register(LeftMenuTableViewCell.self, forCellReuseIdentifier: LeftMenuTableViewCell.reusedId)
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        self.tableView.isScrollEnabled = false
+        self.tableView.separatorStyle = .none
     }
-    
 }
 
 private extension LeftMenuViewController {
@@ -82,7 +68,6 @@ private extension LeftMenuViewController {
         leftMenuImageView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         leftMenuImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
-    
 }
 
 extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {

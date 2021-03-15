@@ -12,26 +12,17 @@ class CategoryMenuViewController: UIViewController {
     var tableView: UITableView = {
         let tableView = UITableView()
         return tableView
-    }()    //.init(frame: CGRect.zero, style: .grouped)
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //      self.updateLayout(with: self.view.frame.size)
         setupTableView()
     }
-    
-    //    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-    //        super.viewWillTransition(to: size, with: coordinator)
-    //        coordinator.animate(alongsideTransition: { (context) in
-    //            self.updateLayout(with: size)
-    //        }, completion: nil)
-    //    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
-    
     
     /*
      // MARK: - Navigation
@@ -45,8 +36,6 @@ class CategoryMenuViewController: UIViewController {
     
 }
 
-//extension CategoryMenuViewController {}
-//
 private extension CategoryMenuViewController {
     func setupTableView() {
         self.view.addSubview(tableView)
