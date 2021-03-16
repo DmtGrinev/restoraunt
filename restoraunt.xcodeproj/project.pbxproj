@@ -17,10 +17,11 @@
 		6336FED225EA3A87007E8C90 /* restorauntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6336FED125EA3A87007E8C90 /* restorauntTests.swift */; };
 		6336FEDD25EA3A87007E8C90 /* restorauntUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6336FEDC25EA3A87007E8C90 /* restorauntUITests.swift */; };
 		6336FEFF25EA3CEA007E8C90 /* RestMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6336FEFE25EA3CEA007E8C90 /* RestMenuCollectionViewCell.swift */; };
-		6336FF0425EA4846007E8C90 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6336FF0325EA4846007E8C90 /* CategoryModel.swift */; };
+		6336FF0425EA4846007E8C90 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6336FF0325EA4846007E8C90 /* Category.swift */; };
 		639B906025EBA431003E1C8C /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B905F25EBA431003E1C8C /* LeftMenuViewController.swift */; };
 		639B907125ED0253003E1C8C /* CategoryMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B907025ED0253003E1C8C /* CategoryMenuTableViewCell.swift */; };
 		639B907925ED0EE8003E1C8C /* CategoryMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B907825ED0EE8003E1C8C /* CategoryMenuViewController.swift */; };
+		63DB95C22600D76000200AA6 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB95C12600D76000200AA6 /* Dish.swift */; };
 		63F224ED25F3F3050050BB67 /* LeftMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F224EC25F3F3050050BB67 /* LeftMenuTableViewCell.swift */; };
 		886045DDAF3CB4DCCAC2B45E /* Pods_restoraunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51C63E8F93C876C426D68D4 /* Pods_restoraunt.framework */; };
 		9DA1928E06559359AB760C83 /* Pods_restoraunt_restorauntUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F509DE35A5C6D60E936147 /* Pods_restoraunt_restorauntUITests.framework */; };
@@ -61,10 +62,11 @@
 		6336FEDC25EA3A87007E8C90 /* restorauntUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restorauntUITests.swift; sourceTree = "<group>"; };
 		6336FEDE25EA3A87007E8C90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6336FEFE25EA3CEA007E8C90 /* RestMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMenuCollectionViewCell.swift; sourceTree = "<group>"; };
-		6336FF0325EA4846007E8C90 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		6336FF0325EA4846007E8C90 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		639B905F25EBA431003E1C8C /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		639B907025ED0253003E1C8C /* CategoryMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMenuTableViewCell.swift; sourceTree = "<group>"; };
 		639B907825ED0EE8003E1C8C /* CategoryMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMenuViewController.swift; sourceTree = "<group>"; };
+		63DB95C12600D76000200AA6 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		63F224EC25F3F3050050BB67 /* LeftMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewCell.swift; sourceTree = "<group>"; };
 		66F509DE35A5C6D60E936147 /* Pods_restoraunt_restorauntUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_restoraunt_restorauntUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2CE71B22C937A06F34F6AD /* Pods-restorauntTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-restorauntTests.release.xcconfig"; path = "Target Support Files/Pods-restorauntTests/Pods-restorauntTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -180,7 +182,8 @@
 		639B905225EABC16003E1C8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6336FF0325EA4846007E8C90 /* CategoryModel.swift */,
+				6336FF0325EA4846007E8C90 /* Category.swift */,
+				63DB95C12600D76000200AA6 /* Dish.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -463,7 +466,8 @@
 				639B906025EBA431003E1C8C /* LeftMenuViewController.swift in Sources */,
 				6336FEBB25EA3A86007E8C90 /* AppDelegate.swift in Sources */,
 				63F224ED25F3F3050050BB67 /* LeftMenuTableViewCell.swift in Sources */,
-				6336FF0425EA4846007E8C90 /* CategoryModel.swift in Sources */,
+				63DB95C22600D76000200AA6 /* Dish.swift in Sources */,
+				6336FF0425EA4846007E8C90 /* Category.swift in Sources */,
 				6336FEBD25EA3A86007E8C90 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

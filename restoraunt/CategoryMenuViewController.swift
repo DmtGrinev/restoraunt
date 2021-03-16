@@ -9,6 +9,8 @@ import UIKit
 
 class CategoryMenuViewController: UIViewController {
     
+    let dishes = Dish.fetchDish()
+    
     var tableView: UITableView = {
         let tableView = UITableView()
         return tableView
@@ -43,18 +45,23 @@ private extension CategoryMenuViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.contentInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        self.tableView.separatorStyle = .none
     }
 }
 
 extension CategoryMenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return dishes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoryMenuTableViewCell.reusedId, for: indexPath) as! CategoryMenuTableViewCell
-        cell.dishImageView.image = UIImage(named: "image")
-        cell.backgroundColor = .systemTeal
+        cell.backgroundColor = .white
+        cell.dishImageView.image = UIImage(named: dishes[indexPath.row].dishImage)
+        cell.titleDishLabel.text = dishes[indexPath.row].dishTitle
+        cell.descriptionDishLabel.text = dishes[indexPath.row].dishDescription
+        cell.weightDishLabel.text = dishes[indexPath.row].dishWeight
+        cell.priceDishLabel.text = dishes[indexPath.row].dishPrise
         return cell
     }
     

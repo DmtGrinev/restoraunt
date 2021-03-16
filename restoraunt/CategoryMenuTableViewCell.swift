@@ -54,11 +54,11 @@ class CategoryMenuTableViewCell: UITableViewCell {
 
     override func prepareForReuse() {
         super.prepareForReuse()
-//        dishImageView.image = nil
-//        titleDishLabel.text = nil
-//        descriptionDishLabel.text = nil
-//        priceDishLabel.text = nil
-//        weightDishLabel.text = nil
+        dishImageView.image = nil
+        titleDishLabel.text = nil
+        descriptionDishLabel.text = nil
+        priceDishLabel.text = nil
+        weightDishLabel.text = nil
     }
     
     
@@ -75,7 +75,7 @@ class CategoryMenuTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         dishImageView.frame = CGRect(x: 5,
                                      y: 5,
-                                     width: 100,
+                                     width: 150,
                                      height: contentView.frame.size.height - 10)
         titleDishLabel.frame = CGRect(x: 10 + dishImageView.frame.size.width ,
                                       y: 5,
@@ -98,9 +98,10 @@ class CategoryMenuTableViewCell: UITableViewCell {
 
     func setupDishImageView() {
         contentView.addSubview(dishImageView)
-        dishImageView.backgroundColor = .systemGreen
-        dishImageView.contentMode = .scaleAspectFit
-//        dishImageView.clipsToBounds = true
+        dishImageView.backgroundColor = .white
+        dishImageView.contentMode = .scaleAspectFill
+        dishImageView.layer.cornerRadius = 10
+        dishImageView.clipsToBounds = true
     }
     
     func setupTitleDishLabel() {
@@ -108,7 +109,6 @@ class CategoryMenuTableViewCell: UITableViewCell {
         titleDishLabel.backgroundColor = .systemPink
         titleDishLabel.font = .boldSystemFont(ofSize: 18)
         titleDishLabel.textAlignment = .center
-        titleDishLabel.text = "Название"
     }
     
     func setupDescriptionDishLabel() {
@@ -116,19 +116,16 @@ class CategoryMenuTableViewCell: UITableViewCell {
         descriptionDishLabel.backgroundColor = .systemYellow
         descriptionDishLabel.numberOfLines = 0
         descriptionDishLabel.font = .systemFont(ofSize: 12)
-        descriptionDishLabel.text = "Здесь будет описание и состав блюд 12321413"
     }
     
     func setupWeightDishLabel() {
         contentView.addSubview(weightDishLabel)
         weightDishLabel.backgroundColor = .systemOrange
         weightDishLabel.textAlignment = .center
-        weightDishLabel.text = "567гр."
     }
     
     func setupPriceDishLabel() {
         contentView.addSubview(priceDishLabel)
         priceDishLabel.backgroundColor = .systemRed
-        priceDishLabel.text = "3456 руб."
     }
 }

@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-struct CategoryModel {
+struct Category {
     
     var categoryImage: String
     var categoryTitle: String?
@@ -19,10 +19,10 @@ struct CategoryModel {
         "Горячее", "Закуски", "Супы", "Салаты", "Десерты", "Напитки"
     ]
     
-    static func fetchCategory() -> [CategoryModel] {
-        var categorys = [CategoryModel]()
+    static func fetchCategory() -> [Category] {
+        var categorys = [Category]()
         for category in restaurantNames {
-            categorys.append(CategoryModel(categoryImage: category, categoryTitle: category))
+            categorys.append(Category(categoryImage: category, categoryTitle: category))
         }
         return categorys
     }

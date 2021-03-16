@@ -13,7 +13,7 @@ class RestMenuViewController: UIViewController {
     
     var collectionView: UICollectionView!
     var menu: SideMenuNavigationController?
-    let category = CategoryModel.fetchCategory()
+    let category = Category.fetchCategory()
     private let itemsPerRow: CGFloat = 2
     
     override func viewDidLoad() {
