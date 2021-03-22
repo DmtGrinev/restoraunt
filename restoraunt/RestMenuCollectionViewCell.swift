@@ -26,13 +26,6 @@ class RestMenuCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    override var isSelected: Bool {
-        didSet {
-            // добавить переход
-            print("fffffffff")
-        }
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         categoryImageView.image = nil

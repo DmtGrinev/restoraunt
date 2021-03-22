@@ -9,7 +9,7 @@ import UIKit
 
 class LeftMenuViewController: UIViewController{
     
-    var items = ["Бронь стола", "Акции и предложения", "Оставить отзыв", "Как нас найти"]
+    var items = ["Наше меню", "Бронь стола", "Акции и предложения", "Оставить отзыв", "Как нас найти"]
     
     var tableView: UITableView = {
         let tableView = UITableView()
@@ -36,16 +36,6 @@ class LeftMenuViewController: UIViewController{
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-   
 }
 
 private extension LeftMenuViewController {
@@ -55,7 +45,7 @@ private extension LeftMenuViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        self.tableView.isScrollEnabled = false
+     //   self.tableView.isScrollEnabled = false
         self.tableView.separatorStyle = .none
     }
 }
@@ -86,6 +76,25 @@ extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let collectionItem = indexPath.item
+        var vc: UIViewController
+        switch collectionItem {
+        case 0:
+            vc = RestMenuViewController()
+        case 1:
+            vc = CategoryMenuViewController()
+        case 2:
+            vc = PromotionViewController()
+        case 3:
+            vc = ReviewsViewController()
+        case 4:
+            vc = MapViewController()
+        default:
+            vc = RestMenuViewController()
+        }
+        navigationController?.pushViewController(vc, animated: true)
+    }
 //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 //            return cellSpacingHeight
 //        }

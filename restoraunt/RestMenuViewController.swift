@@ -46,7 +46,7 @@ extension RestMenuViewController: UICollectionViewDelegate, UICollectionViewData
         return cell
     }
 }
-
+// MARK: - Layout
 extension RestMenuViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -56,6 +56,21 @@ extension RestMenuViewController: UICollectionViewDelegateFlowLayout {
         let width = (collectionView.frame.width - spaces) / itemsPerRow
         let height = width * ratio
         return CGSize(width: width, height: height)
+    }
+  
+    // MARK: - Navigation
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                let vc = storyboard.instantiateViewController(identifier: "CategoryIdentifire")
+        let collectionItem = indexPath.item
+        var vc: UIViewController
+                    if collectionItem == 0 {
+                 //       CategoryMenuViewController.dishes =
+                        vc = CategoryMenuViewController()
+                    } else {
+                        vc = CategoryMenuViewController()
+                    }
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
