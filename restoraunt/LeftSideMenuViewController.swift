@@ -7,19 +7,20 @@
 
 import UIKit
 
-class LeftMenuViewController: UIViewController{
+class LeftSideMenuViewController: UIViewController{
     
     var items = ["Наше меню", "Бронь стола", "Акции и предложения", "Оставить отзыв", "Как нас найти"]
     
     var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .white
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
 
     var leftMenuImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .systemGreen
+        imageView.backgroundColor = .white
         imageView.contentMode = .scaleAspectFit
         imageView.image = UIImage(named: "image")
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -28,8 +29,9 @@ class LeftMenuViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLeftMenuImageView()
         setupTableView()
+        setupLeftMenuImageView()
+       
     }
     
     override func viewDidLayoutSubviews() {
@@ -38,38 +40,42 @@ class LeftMenuViewController: UIViewController{
     }
 }
 
-private extension LeftMenuViewController {
+private extension LeftSideMenuViewController {
     func setupTableView() {
         self.view.addSubview(tableView)
-        self.tableView.register(LeftMenuTableViewCell.self, forCellReuseIdentifier: LeftMenuTableViewCell.reusedId)
+        self.tableView.register(LeftSideMenuTableViewCell.self, forCellReuseIdentifier: LeftSideMenuTableViewCell.reusedId)
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        self.tableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        self.tableView.bottomAnchor.constraint(equalTo: self.view.centerYAnchor, constant: +100).isActive = true
         self.tableView.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-     //   self.tableView.isScrollEnabled = false
+        self.tableView.isScrollEnabled = false
         self.tableView.separatorStyle = .none
     }
 }
 
-private extension LeftMenuViewController {
+private extension LeftSideMenuViewController {
     func setupLeftMenuImageView() {
         self.view.addSubview(leftMenuImageView)
         leftMenuImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         leftMenuImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        leftMenuImageView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        leftMenuImageView.topAnchor.constraint(equalTo: tableView.bottomAnchor).isActive = true
         leftMenuImageView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
 }
 
-extension LeftMenuViewController: UITableViewDelegate, UITableViewDataSource {
+extension LeftSideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LeftMenuTableViewCell.reusedId, for: indexPath) as! LeftMenuTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: LeftSideMenuTableViewCell.reusedId, for: indexPath) as! LeftSideMenuTableViewCell
         cell.titleLeftMenuLabel.font = .systemFont(ofSize: 20)
-        cell.backgroundColor = .yellow
-        cell.titleLeftMenuLabel.textColor = .systemRed
+        cell.backgroundColor = .clear
+        cell.titleLeftMenuLabel.textColor = #colorLiteral(red: 0.05882352963, green: 0.180392161, blue: 0.2470588237, alpha: 1)
         cell.titleLeftMenuLabel.textAlignment = .left
         cell.titleLeftMenuLabel.text = items[indexPath.row]
         cell.leftMenuCellImageView.image = UIImage(named: "Book")

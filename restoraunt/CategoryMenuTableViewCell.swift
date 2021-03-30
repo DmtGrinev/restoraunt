@@ -106,26 +106,26 @@ class CategoryMenuTableViewCell: UITableViewCell {
     
     func setupTitleDishLabel() {
         contentView.addSubview(titleDishLabel)
-        titleDishLabel.backgroundColor = .systemPink
+        titleDishLabel.backgroundColor = .white
         titleDishLabel.font = .boldSystemFont(ofSize: 18)
         titleDishLabel.textAlignment = .center
     }
     
     func setupDescriptionDishLabel() {
         contentView.addSubview(descriptionDishLabel)
-        descriptionDishLabel.backgroundColor = .systemYellow
+        descriptionDishLabel.backgroundColor = .white
         descriptionDishLabel.numberOfLines = 0
         descriptionDishLabel.font = .systemFont(ofSize: 12)
     }
     
     func setupWeightDishLabel() {
         contentView.addSubview(weightDishLabel)
-        weightDishLabel.backgroundColor = .systemOrange
+        weightDishLabel.backgroundColor = .white
         weightDishLabel.textAlignment = .center
     }
     
     func setupPriceDishLabel() {
         contentView.addSubview(priceDishLabel)
-        priceDishLabel.backgroundColor = .systemRed
+        priceDishLabel.backgroundColor = .white
     }
 }

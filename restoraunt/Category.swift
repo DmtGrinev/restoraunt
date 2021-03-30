@@ -15,13 +15,13 @@ struct Category {
     
     
     
-    static let restaurantNames = [
+    static let categoryNames = [
         "Горячее", "Закуски", "Супы", "Салаты", "Десерты", "Напитки"
     ]
     
     static func fetchCategory() -> [Category] {
         var categorys = [Category]()
-        for category in restaurantNames {
+        for category in categoryNames {
             categorys.append(Category(categoryImage: category, categoryTitle: category))
         }
         return categorys

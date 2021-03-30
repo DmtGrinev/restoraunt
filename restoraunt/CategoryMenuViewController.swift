@@ -13,6 +13,7 @@ class CategoryMenuViewController: UIViewController {
     
     var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
     
@@ -46,6 +47,10 @@ private extension CategoryMenuViewController {
         self.tableView.delegate = self
         self.tableView.contentInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         self.tableView.separatorStyle = .none
+        self.tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        self.tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        self.tableView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
 }
 

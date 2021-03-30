@@ -13,7 +13,7 @@ class RestMenuCollectionViewCell: UICollectionViewCell {
     
     var categoryImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .systemGreen
+        imageView.backgroundColor = .white
         imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -21,7 +21,8 @@ class RestMenuCollectionViewCell: UICollectionViewCell {
     
     var categoryLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .systemPink
+        label.backgroundColor = .white
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

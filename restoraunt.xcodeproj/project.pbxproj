@@ -18,14 +18,17 @@
 		6336FEDD25EA3A87007E8C90 /* restorauntUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6336FEDC25EA3A87007E8C90 /* restorauntUITests.swift */; };
 		6336FEFF25EA3CEA007E8C90 /* RestMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6336FEFE25EA3CEA007E8C90 /* RestMenuCollectionViewCell.swift */; };
 		6336FF0425EA4846007E8C90 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6336FF0325EA4846007E8C90 /* Category.swift */; };
-		639B906025EBA431003E1C8C /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B905F25EBA431003E1C8C /* LeftMenuViewController.swift */; };
+		639B906025EBA431003E1C8C /* LeftSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B905F25EBA431003E1C8C /* LeftSideMenuViewController.swift */; };
 		639B907125ED0253003E1C8C /* CategoryMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B907025ED0253003E1C8C /* CategoryMenuTableViewCell.swift */; };
 		639B907925ED0EE8003E1C8C /* CategoryMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 639B907825ED0EE8003E1C8C /* CategoryMenuViewController.swift */; };
 		63DB95C22600D76000200AA6 /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB95C12600D76000200AA6 /* Dish.swift */; };
 		63DB95CA2609067000200AA6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB95C92609067000200AA6 /* MapViewController.swift */; };
 		63DB95CF2609074000200AA6 /* ReviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB95CE2609074000200AA6 /* ReviewsViewController.swift */; };
 		63DB95D4260907E900200AA6 /* PromotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB95D3260907E900200AA6 /* PromotionViewController.swift */; };
-		63F224ED25F3F3050050BB67 /* LeftMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F224EC25F3F3050050BB67 /* LeftMenuTableViewCell.swift */; };
+		63DB95DC2613523700200AA6 /* ReviewsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB95DB2613523700200AA6 /* ReviewsCollectionViewCell.swift */; };
+		63DB95E4261353D700200AA6 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB95E3261353D700200AA6 /* Review.swift */; };
+		63DB95F42613A2B500200AA6 /* SendReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DB95F32613A2B500200AA6 /* SendReviewViewController.swift */; };
+		63F224ED25F3F3050050BB67 /* LeftSideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F224EC25F3F3050050BB67 /* LeftSideMenuTableViewCell.swift */; };
 		886045DDAF3CB4DCCAC2B45E /* Pods_restoraunt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A51C63E8F93C876C426D68D4 /* Pods_restoraunt.framework */; };
 		9DA1928E06559359AB760C83 /* Pods_restoraunt_restorauntUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66F509DE35A5C6D60E936147 /* Pods_restoraunt_restorauntUITests.framework */; };
 /* End PBXBuildFile section */
@@ -66,14 +69,17 @@
 		6336FEDE25EA3A87007E8C90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6336FEFE25EA3CEA007E8C90 /* RestMenuCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestMenuCollectionViewCell.swift; sourceTree = "<group>"; };
 		6336FF0325EA4846007E8C90 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		639B905F25EBA431003E1C8C /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		639B905F25EBA431003E1C8C /* LeftSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuViewController.swift; sourceTree = "<group>"; };
 		639B907025ED0253003E1C8C /* CategoryMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMenuTableViewCell.swift; sourceTree = "<group>"; };
 		639B907825ED0EE8003E1C8C /* CategoryMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMenuViewController.swift; sourceTree = "<group>"; };
 		63DB95C12600D76000200AA6 /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		63DB95C92609067000200AA6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		63DB95CE2609074000200AA6 /* ReviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsViewController.swift; sourceTree = "<group>"; };
 		63DB95D3260907E900200AA6 /* PromotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionViewController.swift; sourceTree = "<group>"; };
-		63F224EC25F3F3050050BB67 /* LeftMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuTableViewCell.swift; sourceTree = "<group>"; };
+		63DB95DB2613523700200AA6 /* ReviewsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCollectionViewCell.swift; sourceTree = "<group>"; };
+		63DB95E3261353D700200AA6 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		63DB95F32613A2B500200AA6 /* SendReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendReviewViewController.swift; sourceTree = "<group>"; };
+		63F224EC25F3F3050050BB67 /* LeftSideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		66F509DE35A5C6D60E936147 /* Pods_restoraunt_restorauntUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_restoraunt_restorauntUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2CE71B22C937A06F34F6AD /* Pods-restorauntTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-restorauntTests.release.xcconfig"; path = "Target Support Files/Pods-restorauntTests/Pods-restorauntTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D41BA921C81293C392C949A /* Pods-restorauntTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-restorauntTests.debug.xcconfig"; path = "Target Support Files/Pods-restorauntTests/Pods-restorauntTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +196,7 @@
 			children = (
 				6336FF0325EA4846007E8C90 /* Category.swift */,
 				63DB95C12600D76000200AA6 /* Dish.swift */,
+				63DB95E3261353D700200AA6 /* Review.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -199,7 +206,8 @@
 			children = (
 				6336FEFE25EA3CEA007E8C90 /* RestMenuCollectionViewCell.swift */,
 				639B907025ED0253003E1C8C /* CategoryMenuTableViewCell.swift */,
-				63F224EC25F3F3050050BB67 /* LeftMenuTableViewCell.swift */,
+				63F224EC25F3F3050050BB67 /* LeftSideMenuTableViewCell.swift */,
+				63DB95DB2613523700200AA6 /* ReviewsCollectionViewCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -209,9 +217,10 @@
 			children = (
 				6336FEBE25EA3A86007E8C90 /* RestMenuViewController.swift */,
 				639B907825ED0EE8003E1C8C /* CategoryMenuViewController.swift */,
-				639B905F25EBA431003E1C8C /* LeftMenuViewController.swift */,
+				639B905F25EBA431003E1C8C /* LeftSideMenuViewController.swift */,
 				63DB95D3260907E900200AA6 /* PromotionViewController.swift */,
 				63DB95CE2609074000200AA6 /* ReviewsViewController.swift */,
+				63DB95F32613A2B500200AA6 /* SendReviewViewController.swift */,
 				63DB95C92609067000200AA6 /* MapViewController.swift */,
 			);
 			name = Controllers;
@@ -472,12 +481,15 @@
 				639B907925ED0EE8003E1C8C /* CategoryMenuViewController.swift in Sources */,
 				6336FEFF25EA3CEA007E8C90 /* RestMenuCollectionViewCell.swift in Sources */,
 				6336FEBF25EA3A86007E8C90 /* RestMenuViewController.swift in Sources */,
+				63DB95F42613A2B500200AA6 /* SendReviewViewController.swift in Sources */,
 				639B907125ED0253003E1C8C /* CategoryMenuTableViewCell.swift in Sources */,
-				639B906025EBA431003E1C8C /* LeftMenuViewController.swift in Sources */,
+				639B906025EBA431003E1C8C /* LeftSideMenuViewController.swift in Sources */,
 				63DB95D4260907E900200AA6 /* PromotionViewController.swift in Sources */,
 				6336FEBB25EA3A86007E8C90 /* AppDelegate.swift in Sources */,
-				63F224ED25F3F3050050BB67 /* LeftMenuTableViewCell.swift in Sources */,
+				63F224ED25F3F3050050BB67 /* LeftSideMenuTableViewCell.swift in Sources */,
 				63DB95C22600D76000200AA6 /* Dish.swift in Sources */,
+				63DB95E4261353D700200AA6 /* Review.swift in Sources */,
+				63DB95DC2613523700200AA6 /* ReviewsCollectionViewCell.swift in Sources */,
 				6336FF0425EA4846007E8C90 /* Category.swift in Sources */,
 				63DB95CF2609074000200AA6 /* ReviewsViewController.swift in Sources */,
 				6336FEBD25EA3A86007E8C90 /* SceneDelegate.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LeftMenuTableViewCell: UITableViewCell {
+class LeftSideMenuTableViewCell: UITableViewCell {
     
     static let reusedId = "LeftMenuCell"
     
@@ -23,7 +23,7 @@ class LeftMenuTableViewCell: UITableViewCell {
     
     var leftMenuCellImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .systemBlue
+        imageView.backgroundColor = .clear
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView

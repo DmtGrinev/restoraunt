@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Left Menu View Controller-->
+        <!--Left Side Menu View Controller-->
         <scene sceneID="Fyn-zF-kUW">
             <objects>
-                <viewController id="4tg-bv-x2V" customClass="LeftMenuViewController" customModule="restoraunt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4tg-bv-x2V" customClass="LeftSideMenuViewController" customModule="restoraunt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="14p-HC-VmA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="2570" y="-619"/>
         </scene>
-        <!--Rest Menu View Controller-->
+        <!--Логотип-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RestMenuViewController" customModule="restoraunt" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="b8A-V0-Eqv">
+                    <navigationItem key="navigationItem" title="Логотип" id="b8A-V0-Eqv">
                         <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="MBs-8f-tXi">
                             <connections>
                                 <action selector="tapMenu:" destination="BYZ-38-t0r" id="OM5-uh-HmW"/>

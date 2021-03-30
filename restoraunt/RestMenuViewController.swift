@@ -19,11 +19,7 @@ class RestMenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        menu = SideMenuNavigationController(rootViewController: LeftMenuViewController())
-        menu?.leftSide = true
-        menu?.setNavigationBarHidden(true, animated: false)
-        SideMenuManager.default.leftMenuNavigationController = menu
-        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        setupSideMenu()
     }
     
     @IBAction func tapMenu(_ sender: UIBarButtonItem) {
@@ -37,7 +33,7 @@ extension RestMenuViewController: UICollectionViewDelegate, UICollectionViewData
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RestMenuCollectionViewCell.reusedId, for: indexPath) as! RestMenuCollectionViewCell
-        cell.backgroundColor = .systemYellow
+        cell.backgroundColor = .systemGray
         cell.categoryImageView.image = UIImage(named: category[indexPath.item].categoryImage)
         cell.categoryLabel.text = category[indexPath.item].categoryTitle  
         cell.layer.cornerRadius = 10
@@ -57,20 +53,27 @@ extension RestMenuViewController: UICollectionViewDelegateFlowLayout {
         let height = width * ratio
         return CGSize(width: width, height: height)
     }
-  
+    
     // MARK: - Navigation
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let vc = storyboard.instantiateViewController(identifier: "CategoryIdentifire")
         let collectionItem = indexPath.item
         var vc: UIViewController
-                    if collectionItem == 0 {
-                 //       CategoryMenuViewController.dishes =
-                        vc = CategoryMenuViewController()
-                    } else {
-                        vc = CategoryMenuViewController()
-                    }
+        if collectionItem == 0 {
+            vc = CategoryMenuViewController()
+        } else {
+            vc = CategoryMenuViewController() // Make changes
+        }
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+private extension RestMenuViewController {
+    func setupSideMenu() {
+        menu = SideMenuNavigationController(rootViewController: LeftSideMenuViewController())
+        menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: false)
+        SideMenuManager.default.leftMenuNavigationController = menu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
     }
 }
 
@@ -79,7 +82,7 @@ private extension RestMenuViewController {
         self.collectionView =  UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
         self.view.addSubview(collectionView)
         self.collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.collectionView.backgroundColor = .systemGray2
+        self.collectionView.backgroundColor = .white
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(RestMenuCollectionViewCell.self, forCellWithReuseIdentifier: RestMenuCollectionViewCell.reusedId)
