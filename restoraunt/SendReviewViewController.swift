@@ -50,12 +50,30 @@ private extension SendReviewViewController {
 
 extension SendReviewViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //    let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-    //    cell.backgroundColor = .red
-        return UITableViewCell()
+        //   let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        if indexPath.row == 0 {
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: NameReviewTableViewCell.reusedId)
+            cell.backgroundColor = .red
+            return cell
+        }
+        else if indexPath.row == 1 {
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: NameReviewTableViewCell.reusedId) //as! NameReviewTableViewCell
+            //set the data here
+            return cell
+        }
+        else {
+            let cell: UITableViewCell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: NameReviewTableViewCell.reusedId) //as! NameReviewTableViewCell
+            //set the data here
+            return cell
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
     }
 }

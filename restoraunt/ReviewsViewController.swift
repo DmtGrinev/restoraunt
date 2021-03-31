@@ -10,7 +10,7 @@ import UIKit
 class ReviewsViewController: UIViewController {
     
     var collectionView: UICollectionView!
-    private let itemsPerRow: CGFloat = 2
+    private let sections: CGFloat = 2
     let review = Review.fetchReviews()
 
     override func viewDidLoad() {
@@ -39,9 +39,9 @@ extension ReviewsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let spaces = collectionView.contentInset.left * (itemsPerRow + 1)
+        let spaces = collectionView.contentInset.left * (sections + 1)
         let width = collectionView.frame.width
-        let height = (collectionView.frame.height - spaces) / itemsPerRow
+        let height = (collectionView.frame.height - spaces) / sections
         return CGSize(width: width, height: height)
     }
     

@@ -37,7 +37,6 @@ class CategoryMenuTableViewCell: UITableViewCell {
     
     var descriptionDishLabel: UILabel = {
         let label = UILabel()
-      
         return label
     }()
     
@@ -66,12 +65,6 @@ class CategoryMenuTableViewCell: UITableViewCell {
 //        super.awakeFromNib()
 //    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
     override func layoutSubviews() {
         dishImageView.frame = CGRect(x: 5,
                                      y: 5,

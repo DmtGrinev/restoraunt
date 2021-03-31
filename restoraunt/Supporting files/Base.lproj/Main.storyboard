@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="2570" y="-619"/>
         </scene>
-        <!--Логотип-->
+        <!--Rest Menu View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="RestMenuViewController" customModule="restoraunt" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Логотип" id="b8A-V0-Eqv">
+                    <navigationItem key="navigationItem" id="b8A-V0-Eqv">
                         <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="MBs-8f-tXi">
                             <connections>
                                 <action selector="tapMenu:" destination="BYZ-38-t0r" id="OM5-uh-HmW"/>
